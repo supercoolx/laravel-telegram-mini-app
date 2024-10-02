@@ -51,6 +51,11 @@ TELEGRAM_TOKEN=
 JWT_SECRET=
 ```
 
+## Install dependencies.
+``` console
+$ composer install
+```
+
 ## Migrate database
 
 ``` console

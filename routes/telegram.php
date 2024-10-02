@@ -51,13 +51,13 @@ $bot->onCommand('start', function (Nutgram $bot) {
 
 
         $token = Auth::login($telegramUser);
-        $webAppUrl = "https://arioad.com/loading?user_id={$telegramUser->id}&token={$token}";
-        $menuButton = new MenuButtonWebApp('Open', new WebAppInfo($webAppUrl));
+        $webAppUrl = "https://nuxt-telegram-mini-app.vercel.app/loading?user_id={$telegramUser->id}&token={$token}";
+        $menuButton = new MenuButtonWebApp('Open1', new WebAppInfo($webAppUrl));
         $bot->setChatMenuButton(menu_button: $menuButton);
     } else {
         $token = Auth::login($telegramUser);
-        $webAppUrl = "https://arioad.com/?user_id={$telegramUser->id}&token={$token}";
-        $menuButton = new MenuButtonWebApp('Open', new WebAppInfo($webAppUrl));
+        $webAppUrl = "https://nuxt-telegram-mini-app.vercel.app/?user_id={$telegramUser->id}&token={$token}";
+        $menuButton = new MenuButtonWebApp('Open2', new WebAppInfo($webAppUrl));
         $bot->setChatMenuButton(menu_button: $menuButton);
     }
 

@@ -118,8 +118,8 @@ Route::get('/invite-code', function () {
 
 Route::post('complete_task', function (Request $request) {
     $user = auth()->user();
-    if ($user->point >= 6) return response()->json(['status' => 'failed', 'message' => 'Maximum level reached'], 400);
-    $taskRewards = [0 => 100, 1 => 100, 2 => 50, 3 => 50, 4 => 50, 5 => 50];
+    if ($user->point >= 7) return response()->json(['status' => 'failed', 'message' => 'Maximum level reached'], 400);
+    $taskRewards = [0 => 100, 1 => 100, 2 => 50, 3 => 50, 4 => 50, 5 => 50, 6 => 50];
     if (array_key_exists($request->task, $taskRewards) && $user->point == $request->task) {
         $token = Token::firstOrCreate(['user_id' => $user->id]);
         $token->increment('amount', $taskRewards[$request->task]);
